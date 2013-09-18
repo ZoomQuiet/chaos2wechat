@@ -67,60 +67,6 @@ Bottle
 
 
 
-URIsAok
------------------------
-
-对于,我们的目标任务: 包装 `金山网址云安全开放API <http://code.ijinshan.com/api/devmore4.html#md1>`_ 为 `REST`_ 在线服务; 
-
-不用研究透 `Bottle`_ ,仅仅需要作到以下几点,就可以完成核心功能了:
-
-- 对指定 URL 接收 `POST` 方式提交来的待查网址
-- 根据文档, 对查询参数项进行合理的 `base64` / `md5` 编码
-- 对金山网址云,发起合理请求,并收集结果
-
-
-完成后的使用效果, 如 :ref:`fig_1_3` 
-
-.. _fig_1_3:
-.. figure:: ../_static/figs/chaos1-3-chk.png
-
-   插图 1-3 完成 /chk/ 功能
-
-
-整体代码,不过 50几行...
-
-
-.. literalinclude:: index.py
-    :language: python
-    :linenos:
-
-
-
-
-关键行为代码:
-
-- 接收 `POST` 数据 ::
-
-    @app.route('/chk/', method="POST")  # 路由声明中,可以追加提交方式的规定
-    def chk():
-        uri = request.forms.get('uri')  # 内置的 request.forms 对象专门进行提交数据处理的
-
-- 合理进行参数处理::
-
-    args += "&q=" + base64.urlsafe_b64encode(url)   # url安全的base64编码
-    args += "&timestamp=" + "%.3f" % (time.time())  # 时间戳
-    sign_base_string = api_path + "?" + args
-    args += "&sign=" + md5(sign_base_string + SECRET).hexdigest() # md5编码
-
-- 向云服务查询,并收集结果::
-
-    import urllib2 as urilib
-    ...
-    result = eval(urilib.urlopen(api_url).read())
-               |            |       |       +- 返回数据当成文件对象读取出
-               |            |       +-- 组合好的查询url
-               |            +-- 内建的外访函式
-               +-- 返回的是 JSON 格式数据,兼容 Py 的dict 对象,所以,可以就地转换
 
 
 
@@ -131,27 +77,4 @@ URIsAok
 
 以上这一小堆代码,二十分钟,整出来不难吧? 因为,基本上没有涉及太多 `Bottle`_ 的特殊能力,
 几乎全部是标准的本地脚本写法儿,想来:
-
-- 其实,关键功能性行为代码,就8行
-
-    - 仅仅有一行,是需要钻研文档的,,,
-    - 即: `eval(urilib.urlopen(api_url).read())`
-
-.. _fig_1_4:
-.. figure:: ../_static/figs/chaos1-4-urllib.png
-
-    插图 1-4 访问外网的涉及文档
-
-    - 之前版本文档中,吼关闭了多数对外访问的模块,只能使用 `urllib2`
-    - 后来 `SAE`_ 的快速进化,又重新开放了主要的常见几个对外网络访问的库模块 
-    - 但是,没有例子,没有推荐链接,真心一句话,是很需要心灵感应才知道怎么作的..
-
-- 其余,都是力气活儿
-
-    - 只要别抄錯
-    - 都是赋值,赋值,赋值,赋值,,,,
-
-- 只要注意每一步,随时都可以使用 `print` 吼回来,测试确认无误,就可以继续前进了,,,
-
-`这就是脚本语言的直觉式开发调试体验!`
 

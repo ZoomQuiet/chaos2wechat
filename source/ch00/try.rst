@@ -65,22 +65,6 @@
 创建
 --------
 
-参考 :ref:`fig_0_1` ,首先通过 `邀请码`_ ,进入 `SAE`_ 后台;
-
-.. _fig_0_1:
-.. figure:: ../_static/figs/chaos0-1.png
-
-   插图 0-1 创建SAE应用
-
-
-- 然后从 `我的首页->创建新应用` 进入;
-- 完成全新 `Pyhton`_ 应用的命名与创建...
-- 当前乱入为例, 创建的是 `urisaok`
-
-
-.. note:: 注意!
-
-    选择开发语言为 `Python`_ ,才好进一步的各种乱入...
 
 
 
@@ -99,88 +83,8 @@
 
 94这么简单!
 
-当然,要从 `Hallo World` 开始品尝!
-
-`index.wsgi`::
-
-    import sae
-
-    def app(environ, start_response):
-        status = '200 OK'
-        response_headers = [('Content-type', 'text/plain')]
-        start_response(status, response_headers)
-        return ['Hello, world!']
-
-    application = sae.create_wsgi_app(app)
-
-
-
-`config.yaml`::
-
-    ---
-    name: urisaok
-    version: 1
-    ...
-
-完成以上仅仅两个文件的创建,以及修订(完全从官方 `快速指引 <http://appstack.sinaapp.com/static/doc/release/testing/quickstart.html>`_ 抄来就好)
-
-然后使用 `saecloud`_ 完成部署 ::
-
-    $ saecloud deploy
-    Deploying http://1.urisaok.sinaapp.com
-    Updating cache
-    Finding changes
-    Pushing to server...  done
-
-
-就类似 :ref:`fig_0_2` ,明确当前的应用运行情况!
-
-.. _fig_0_2:
-.. figure:: ../_static/figs/chaos0-2-apps.png
-
-   插图 0-2 应用版本在后台
-
-
-.. note:: (~_~)
-
-    此处,因为大妈,曾经部署过两个版本,所以截屏可能同读者处看的有点不同;
-
-    不过,可以直观的明确 `SAE`_ 应用版本限定:
-
-      - 每个应用最多有 10 个版本
-      - 以版本 x 为例,应用的访问 URL 是:
-
-        - `http://x.应用名.sinaapp.com/`
-
-      - 每次可以指定唯一己在线版本为正式发布版本, URL为:
-
-        - `http://应用名.sinaapp.com/`
-
 
 推荐使用 `cURL`_ 进行测试::
-
-    $ curl -v 1.urisaok.sinaapp.com 
-    * About to connect() to 1.urisaok.sinaapp.com port 80 (#0)
-    *   Trying 220.181.136.234... connected
-    * Connected to 1.urisaok.sinaapp.com (220.181.136.234) port 80 (#0)
-    > GET / HTTP/1.1
-    > User-Agent: curl/7.21.4 (universal-apple-darwin11.0) libcurl/7.21.4 OpenSSL/0.9.8r zlib/1.2.5
-    > Host: 1.urisaok.sinaapp.com
-    > Accept: */*
-    > 
-    < HTTP/1.1 200 OK
-    < Server: nginx/1.1.0
-    < Date: Wed, 25 Apr 2012 13:57:24 GMT
-    < Content-Type: text/plain
-    < Connection: close
-    < Set-Cookie: saeut=14.117.42.241.1335362244745161; path=/; max-age=311040000
-    < Via: 10.73.26.28
-    < Content-Length: 13
-    < 
-    * Closing connection #0
-    Hello, world!
-
-可以方便的完整观察到整个 http 请求的过程,,,
 
 
 
