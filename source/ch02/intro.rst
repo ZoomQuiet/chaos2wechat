@@ -1,11 +1,13 @@
 .. include:: ../LINKS.rst
 
 
-好了,已经完成了预期的 :
+好了,目前, 在 `Python`_ ; `Bottle`_ ; `SAE`_ 的帮助下,我们已经 :
 
 - 用起 `SAE`_ 
-- 包装 `金山网址云安全开放API <http://code.ijinshan.com/api/devmore4.html#md1>`_ 为 `REST`_ 服务
-- 只要 `curl -d "uri=http://sina.com" urisaok.sinaapp.com/chk/` 即可返回,金山云的数据!
+- 完成应答 获得 `开发模式` 权力
+- 完成对特定的 命令: `h` 返回预订的内容 : `是也乎`
+
+现在, 要想让我们自制的应答器完成一个最简单的业务: `收集成员信息` 要怎么来?!
 
 
 .. sidebar:: 推荐
@@ -13,12 +15,6 @@
 
     - `命名的艺术 <http://agentzh.org/misc/slides/naming/#2>`_
     - `“命名”课回顾 <http://agentzh.org/misc/slides/naming/naming_recap.html#2>`_
-
-    
-
-**但是** :
-
-
 
 
 

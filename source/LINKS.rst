@@ -15,11 +15,15 @@
 .. 工程链接收集~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. _URIsAok: https://github.com/ZoomQuiet/urisaok
 .. _URIsA: https://bitbucket.org/ZoomQuiet/ok.urisa
+.. _42分钟乱入SAE手册!-): http://chaos2sae.readthedocs.org/en/latest/
+.. _消息接口指南: http://mp.weixin.qq.com/wiki/index.php?title=%E6%B6%88%E6%81%AF%E6%8E%A5%E5%8F%A3%E6%8C%87%E5%8D%97
+.. _wechat: http://mp.weixin.qq.com/wiki/index.php?title=%E6%B6%88%E6%81%AF%E6%8E%A5%E5%8F%A3%E6%8C%87%E5%8D%97
 
 .. _SAE: http://sae.sina.com.cn/?m=devcenter
 .. _dev_server: http://appstack.sinaapp.com/static/doc/release/testing/tools.html
 .. _saecloud: http://appstack.sinaapp.com/static/doc/release/testing/tools.html#saecloud
 .. _邀请码: http://appstack.sinaapp.com/apply
+.. _KVDB: http://python.sinaapp.com/doc/service.html#kvdb
 
 .. _GAE: http://zh.wikipedia.org/wiki/GAE
 .. _Git: http://git-scm.com/
@@ -50,6 +54,9 @@
 
 .. _stdyun.com: http://stdyun.com/vhost
 
+.. _RESTful: http://www.ruanyifeng.com/blog/2011/09/restful.html
+.. _REST: http://www.ruanyifeng.com/blog/2011/09/restful.html
+
 .. _OpenResty: http://openresty.org/cn/
 .. _openrestywiki: http://openresty.org/cn/
 .. _openrestyrepo: http://github.com/agentzh/ngx_openresty
@@ -59,6 +66,7 @@
 .. _Lua: http://en.wikipedia.org/wiki/Lua_%28programming_language%29
 
 .. _reSTsections: http://sphinx.pocoo.org/rest.html#sections
+.. _XML: http://zh.wikipedia.org/zh-cn/XML
 
 .. 图片链接收集~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

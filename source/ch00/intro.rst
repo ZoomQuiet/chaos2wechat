@@ -1,6 +1,6 @@
 .. include:: ../LINKS.rst
 
-先得声明,要想真正在 `42`_ 分钟 内进入 `SAE`_ 玩起来,不是没有前提的,,,
+先得声明,要想真正在 `42`_ 分钟 内基于 `SAE`_ 将 `wechat`_ 玩起来,不是没有前提的,,,
 
 至少:
 
@@ -27,3 +27,5 @@
 
         - `文档中心 - Sina App Engine <http://sae.sina.com.cn/?m=devcenter>`_
         - `笨办法学 Python <http://readthedocs.org/docs/learn-python-the-hard-way-zh_cn-translation/en/latest/index.html>`_
+        - `消息接口指南 - 开放平台 <http://mp.weixin.qq.com/wiki/index.php?title=%E6%B6%88%E6%81%AF%E6%8E%A5%E5%8F%A3%E6%8C%87%E5%8D%97>`_
+        - `42分钟乱入SAE手册!-)`_

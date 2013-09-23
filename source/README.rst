@@ -46,6 +46,7 @@ Shinx 说明
 
     .. code-block:: python
         :linenos:
+        :emphasize-lines: 2
 
         def foo():
             print "Love Python, Love FreeDome"
@@ -56,6 +57,7 @@ Shinx 说明
 
 .. code-block:: python
     :linenos:
+    :emphasize-lines: 2 
 
     def foo():
         print "Love Python, Love FreeDome"
@@ -66,6 +68,7 @@ Shinx 说明
 
     .. literalinclude:: example.py
         :language: python
+
 
 
 效果:
