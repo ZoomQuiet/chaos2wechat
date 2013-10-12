@@ -1,0 +1,95 @@
+    /*生成命令:
+$ dot -Tpng gdg_seek_words.dot -o gdg_seek_words.png
+ -Tcmapx -o lb-crx-roles.map
+
+    全局设定
+    plaintext
+{{{#!GraphViz dot
+    */
+
+digraph G4gdg_seek_words {
+    /*全局设定*/
+    graph [label="公众号文章查阅 {流程分析}"
+        ,fontsize=14.0
+        ,fontname="WenQuanYi Micro Hei"
+        ,labeljust="l",labelloc="t",center=1
+        ,ranksep=0.3,center=1,ratio=compress
+        ,rankdir=TB
+        ];
+
+    node[fontsize=11.0,height=0.3
+        ,fontname="WenQuanYi Micro Hei"
+        ,shape=component 
+        ];
+
+    edge [fontsize=9.0,fontcolor="#333333"
+        ,fontname="WenQuanYi Micro Hei"
+        ,arrowsize=0.6,arrowhead=vee,arrowtail=none
+        ,style="setlinewidth(0.5)"
+        ];
+/*
+    src [label="源码",shape=ellipse,style="filled,dashed,setlinewidth(5)"
+        ,color="#333333",fillcolor=dimgray
+        ,URL="http://code.google.com/p/zoomquiet/source/browse/dot/obp/csdndr1-km.dot?repo=tangle"];
+    /*图元声明
+    start       [label="流程开始/结束",shape=point];
+    end         [label="",shape=doublecircle,fillcolor=red];
+
+    box         [label="实体/对象",shape=box];
+    ellipse     [label="行动/节点",shape=ellipse];
+    egg         [label="用户/人物",shape=egg];
+    plaintext   [label="状态/属性",shape=plaintext,fillcolor=whitesmoke];
+    diamond     [label="判别",shape=diamond];
+    note        [label="注释",shape=note];
+    tab         [label="目录/模块",shape=tab];
+    db          [label="数据库",shape=box3d];
+    component   [label="主机/组件",shape=component];
+  ,style="rounded,dotted"];
+*/
+
+    start       [label="流程开始/结束",shape=point];
+    end         [label="",shape=doublecircle,fillcolor=red];
+
+
+    SEEK [label="s 查阅过往文章",shape=component];
+        GB [label="gb G术图书",shape=box];
+        DD [label="dd D码点评",shape=box];
+        GT [label="gt G说公论",shape=box];
+        DM [label="dm 珠的自白",shape=box];
+        OT [label="ot 其它文章",shape=box];
+        ET [label="et 活动报道",shape=box];
+            TAG [label="输入分类编号",shape=note];
+            PLI [label="分类文章列表",shape=tab];
+            PID [label="输入文章编号",shape=note];
+            EXP [label="输出图文链接",shape=tab];
+    OUT [label="* 退出",shape=component];
+
+    /*图例关系
+    srvPUB->installer [label="2.0",style="dotted"];
+    */
+
+    start->SEEK;
+        SEEK->{GB DD GT DM OT ET}->TAG->PLI->PID->EXP->end [color=blue];
+
+        {GB DD GT DM OT ET}->OUT [color=red,style="dotted"];
+        PLI->OUT [color=red];
+        OUT->end;
+
+/*
+    { rank=same; PUB    srvA srvB srvN; }
+    { rank=same; DL     installer; }
+    { rank=same; CHK    chker; }
+    { rank=same; DONE   bkStore; }
+
+    PUB[label="发布阶段",shape=plaintext];
+    DL[label="下载阶段",shape=plaintext];
+    CHK[label="检查阶段",shape=plaintext];
+    DONE[label="完成阶段",shape=plaintext];
+        PUB->DL->CHK->DONE;
+
+        srvPUB->srvAC;
+        srvA->srvB->srvN;
+*/
+    edge [style=invis];
+}
+

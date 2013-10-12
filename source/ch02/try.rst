@@ -68,6 +68,33 @@
 那么对应的命令就先定为: `i` ~ Info. , information 的头字母
 
 
+
+本地带KVDB
+-----------------------------
+
+`KVDB`_ 是 `SAE`_ 专有的自制 NoSQL 服务,跑在云端的,所以,本地想测试,也必须有个模拟环境,
+好在 SDK 包中提供了等价的模拟,只是跑 ``dev_server.py`` 时,要多带个参数,如:
+
+    $ dev_server.py --kvdb-file=./logs/kv.db
+
+
+`SAE`_ 的SDK 支持什么参数可以随时查阅,如:
+
+    $ dev_server.py -h
+    Usage: dev_server.py [options]
+
+    Options:
+      -h, --help            show this help message and exit
+      -p PORT, --port=PORT  Which port to listen
+      --host=HOST           Which host to listen
+      --mysql=MYSQL         Mysql configuration: user:password@host:port
+      --storage-path=STORAGE
+                            Directory used as local stoarge
+      --kvdb-file=KVDB      File to save kvdb data
+
+
+
+
 本地测试
 -----------------------------
 
