@@ -26,6 +26,7 @@
     - 那些需要通读先的:
 
         - `文档中心 - Sina App Engine <http://sae.sina.com.cn/?m=devcenter>`_
-        - `笨办法学 Python <http://readthedocs.org/docs/learn-python-the-hard-way-zh_cn-translation/en/latest/index.html>`_
+        - `笨办法学 Python （Learn Python The Hard Way） — 笨办法学 Python v1.0 documentation <https://learn-python-the-hard-way-zh_cn-translation.readthedocs.org/en/1.0/>`_
+
         - `消息接口指南 - 开放平台 <http://mp.weixin.qq.com/wiki/index.php?title=%E6%B6%88%E6%81%AF%E6%8E%A5%E5%8F%A3%E6%8C%87%E5%8D%97>`_
         - `42分钟乱入SAE手册!-)`_
